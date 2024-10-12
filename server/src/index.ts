@@ -1,8 +1,14 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
+import mongoose from "mongoose";
+
+mongoose.connect(process.env.MONGODB_URL as string, {
+  dbName: "InnoStay",
+});
 
 const PORT = process.env.PORT || 8000;
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

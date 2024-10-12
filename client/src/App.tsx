@@ -1,7 +1,12 @@
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Layout from "./layouts/Layout";
+
 export default function App() {
   return (
-    <div>
-      <h1 className="text-4xl">Hello World</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
